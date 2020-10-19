@@ -22,6 +22,7 @@ export  function Todos () {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(addTodo(inputText))
+    setInputText('')
   }
   
 function handleDelete (item){
@@ -45,7 +46,7 @@ function handleUpdate (id, status){
           onChange={(e) => setInputText(e.target.value)}
           className="todo-input"
           placeholder="Enter your todo here"
-          // value={inputText}
+          value={inputText}
         ></input>
       </form>
       <div className="todo-labels-container">
