@@ -47,6 +47,12 @@ POST
 
 - what tables does your todo app need? (you will need two tables - )
 
+FIRST TABLE
+  - Gets users, email & password
+
+SECOND TABLE
+  - Gets users inputs (TODOS) and displays them by ID
+
 ## Phase 1: Optional but a good first step
 
 Create a mock api (fake placeholder data) for all the routes using an array in memory.
