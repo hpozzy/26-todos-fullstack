@@ -8,30 +8,30 @@ export const todosSlice = createSlice({
   },
   reducers: {
     display: (state, action) => {
-      state.todos = action.payload
-    }
-  },
-  deleteTodo: (state, action) => {
-    state.todos = state.todos.filter((todo) => todo.id !== action.payload)
+      state.todos =  action.payload
+    },
   },
 })
 
-export const { display, deleteTodo, update, addTodo } = todosSlice.actions
+export const { display, deleteTodo, createTodo } = todosSlice.actions
 
-export const getTodos = () => (dispatch) => {
+export const getTodo = () => (dispatch) => {
   axios.get("/api/todos").then((r) => dispatch(display(r.data)))
 }
 
-export const addATodo = () => (dispatch) => {
-  axios.post(`/api/todos`).then((r) => dispatch(addTodo(r.data)))
+export const addTodo = (obj) => (dispatch) => {
+  axios.post('/api/todos', {description: obj} ).then((r) => {dispatch(getTodo())})
 }
 
-
-export const removeTodo = () => (dispatch) => {
-  axios.delete("/api/todos").then((r) => dispatch(deleteTodo(r.data)))
+export const removeTodo = (id) => (dispatch) => {
+  axios.delete('/api/todos/' + id).then((r) => {
+    dispatch(getTodo())
+  })
 }
 
-
+export const updateTodo = (obj) => (dispatch) => {
+  axios.patch('/api/todos/' + obj.id, {status: obj.status} ).then((r) => {dispatch(getTodo())})
+}
 
 export const selectTodo = (state) => state.todos.todos
 
