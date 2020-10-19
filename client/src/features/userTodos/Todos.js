@@ -26,12 +26,10 @@ export  function Todos () {
   }
   
 function handleDelete (item){
-  // e.preventDefault()
   dispatch(removeTodo(item.id))
 }
 
 function handleUpdate (id, status){
-  // e.preventDefault()
   dispatch(updateTodo({id, status}))
 }
 

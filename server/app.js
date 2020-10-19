@@ -41,7 +41,6 @@ app.delete('/api/todos/:id',  (req, res) => {
 })
 
 app.patch('/api/todos/:id', (req, res) => {
-  // let status ="active"
   const id = req.params.id
   const {status}= req.body
   knex.raw(`UPDATE todos SET  status = ? WHERE id = ? `, [  status, id]).then((result => {

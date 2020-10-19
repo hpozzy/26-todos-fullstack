@@ -14,14 +14,12 @@ html, body {
 .App {
   width: 100vw;
 }
-/* MAIN CONTAINER */
 .container {
   width: 70%;
   margin: auto;
   margin-top: 50px;
   border-bottom: solid 1px black;
 }
-/* FORM CONTAINER */
 .todo-form {
   display: flex;
   justify-content: space-between;
@@ -40,7 +38,6 @@ html, body {
 .todo-input-btn {
   padding: 15px 20px;
 }
-/* LABEL CONTAINER */
 .todo-labels-container {
   display: flex;
   width: 100%;
@@ -50,7 +47,6 @@ html, body {
 .todo-description-label {
   margin-right: 38%;
 }
-/* MAPPED ITEMS CONTAINER */
 .todo-item-container {
   display: flex;
   padding: 20px;
@@ -66,7 +62,6 @@ html, body {
   display: flex;
   align-items: center;
 }
-/* STATUS CONTAINER */
 .todo-status-container {
   display: flex;
   align-items: center;
@@ -95,7 +90,6 @@ html, body {
   background:#fff5ea;
   border-radius: 3px;
 }
-/* DELETE BUTTON */
 .todo-delete-btn {
   height: 35px;
   width: 35px;
